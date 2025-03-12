@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Henry Tran's personal portfolio. Explore my skills, projects, and resume.">
+        <meta name="keywords" content="Henry Tran, portfolio, software developer, projects, resume, coding">
+        <meta name="author" content="Henry Tran">
+        <title>Personal Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <ul>
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="About.html">About </a></li>
+                    <li><a href="Skills.html">Skills </a></li>
+                    <li><a href="Projects.html">Projects </a></li>
+                    <li><a href="Contact.html">Contact </a></li>
+                    <li><a href="Theme.html">Theme </a></li>
+                    <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
+                </ul>
+                <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
+            </nav>
+        </header>
+        <main class="content">
+            <section id="p1">
+                <h2>Project 1: Tiny VLM Project</h2>
+                <aside>
+                    <figure>
+                        <img src="static/VLM.png" alt="Interface of Demo Website" style="width: 45dvw;">
+                        <figcaption>Demo Website using our model</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="static/results.png" alt="Results from providing image" style="width: 45dvw;">
+                        <figcaption>Results obtained from passing in said image</figcaption>
+                    </figure>
+                </aside>
+                <p>
+                    This project, me and a group of 3 worked a Vision-Language Model where given an image, the model 
+                    is able to give information on the image. Alongside that, it is able to answer questions regarding
+                    the image with a good accuracy. In the project I worked primarily on the data exploration phase,
+                    understanding the data our dataset contained, and instruction tuning, fine tunes the responses on 
+                    a labeled dataset and outputs. This project taught a lot of the team work needed in a project and 
+                    the importance of communication.
+                </p>
+                <a href="https://github.com/anananan116/TinyVLM">GitHub Page Here</a>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Copyright <span id="user">Henry Tran</span> 2025</p>
+            <address>
+                9450 Gilman Dr. La Jolla, CA 92092
+            </address>
+            <p>Contact me <a href="Contact.html">here</a></p>
+        </footer>
+        <script src="portfolio.js">
+
+        </script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+    </body>
+</html>

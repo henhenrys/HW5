@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Henry Tran's personal portfolio. Explore my skills, projects, and resume.">
+        <meta name="keywords" content="Henry Tran, portfolio, software developer, projects, resume, coding">
+        <meta name="author" content="Henry Tran">
+        <title>Personal Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+            
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <ul>
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="About.html">About </a></li>
+                    <li><a href="Skills.html">Skills </a></li>
+                    <li><a href="Projects.html">Projects </a></li>
+                    <li><a href="Contact.html">Contact </a></li>
+                    <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
+                </ul>
+                <button>Night Mode</button>
+            </nav>
+        </header>
+        <main class="landing">
+            <table style="border: 1px solid black;">
+                <caption>Connect With Me Here</caption>
+                <colgroup>
+                    <col span="2" id="cols">
+                </colgroup>
+                <tr>
+                    <th>GitHub</th>
+                    <th>LinkedIn</th>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/henhenrys">Here</a></td>
+                    <td><a href="https://www.linkedin.com/in/henry-tran-308a8a227/">Here</a></td>
+                </tr>
+            </table><br>
+            <form id="contact_form" action="https://httpbin.org/post" method="POST">
+                <fieldset>
+                 <legend>Contact Me:</legend>
+                 <label for="fname">Full Name:</label>
+                 <input type="text" id="fname" name="fname" required minlength="3" maxlength="50"><br>
+                 <label for="email">Email:</label>
+                 <input type="email" id="email" name="email" required><br>
+                 <label for="comments">Comments:</label>
+                 <textarea id="comments" name="comments" required maxlength="500" rows="5"></textarea><br> 
+                 <output name="info" for="fname email comments"></output>
+                 <output name="error" for="fname email comments"></output> 
+                 <input type="hidden" name="possible_bot" value="true">
+                 <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+
+        </main>
+        <footer class="footer">
+            <p>Copyright <span id="user">Henry Tran</span> 2025</p>
+            <address>
+                9450 Gilman Dr. La Jolla, CA 92092
+            </address>
+            <p>Contact me <a href="Contact.html">here</a></p>
+        </footer>
+        <script src="portfolio.js"></script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+    </body>
+</html>

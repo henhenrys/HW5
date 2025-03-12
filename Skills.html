@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Henry Tran's personal portfolio. Explore my skills, projects, and resume.">
+        <meta name="keywords" content="Henry Tran, portfolio, software developer, projects, resume, coding">
+        <meta name="author" content="Henry Tran">
+        <title>Personal Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <ul>
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="About.html">About </a></li>
+                    <li><a href="Skills.html">Skills </a></li>
+                    <li><a href="Projects.html">Projects </a></li>
+                    <li><a href="Contact.html">Contact </a></li>
+                    <li><a href="Theme.html">Theme </a></li>
+                    <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
+                </ul>
+                <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
+            </nav>
+        </header>
+        <main class="content">
+            <h2>Technical Skills</h2>
+            <section id="programming">
+                <h3>Programming Languages/Tools</h3>
+                <picture>
+                    <source media="(min-width:850px)" srcset="static/pexels-goumbik-574071.jpg">
+                    <img src="static/pexels-olia-danilevich-4974915.jpg" alt="Man Sitting in Front of Three Computers" style="width: 45dvw;">
+                </picture>
+                <br>
+                <cite><a href="https://www.pexels.com/photo/person-encoding-in-laptop-574071/">Lukas from Pexels</a></cite>
+                <cite><a href="https://www.pexels.com/photo/man-sitting-in-front-of-three-computers-4974915/">olia danilevich from Pexels</a></cite>
+                <ol id="li1">
+                    <li><h3>Python</h3></li>
+                    <li><h3>C/C++</h3></li>
+                    <li><h3>Java</h3></li>
+                    <li><h3>JavaScript</h3></li>
+                    <li><h3>Matlab</h3></li>
+                </ol>
+            </section>
+            <section id="webtools">
+                <img src="static/pexels-monoar-rahman-22660-114907.jpg" alt="Silver Laptop Next to Coffe Cup Smartphone and Glasses" style="width: 55%;">
+                <br>
+                <cite><a href="https://www.pexels.com/photo/silver-laptop-next-to-coffe-cup-smartphone-and-glasses-114907/">
+                    Monoar Rahman from Pexels</a></cite>
+                <h3>Web Development Tools</h3>
+                <ol id="li2">
+                    <li><h3><abbr title="HyperText Markup Language">HTML</abbr></h3></li>
+                    <li><h3><abbr title="Cascading Style Sheets">CSS</abbr></h3></li>
+                    <li><h3>Bootstrap</h3></li>
+                    <li><h3>Figma</h3></li>
+                </ol>
+            </section>
+            <section id="softskills">
+                <img src="static/pexels-canvastudio-3153199.jpg" alt="Man Working on Laptop while Woman Takes Notes" style="width: 55%;">
+                <br>
+                <cite><a href="https://www.pexels.com/photo/man-working-on-laptop-while-woman-takes-notes-3153199/">
+                    Canva Studio from Pexels</a></cite>
+                <h2>Soft Skills</h2>
+                <ol id="li3">
+                    <li><h3>Problem Solver</h3></li>
+                    <li><h3>Team Player</h3></li>
+                    <li><h3>Hard Worker</h3></li>
+                </ol>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Copyright <span id="user">Henry Tran</span> 2025</p>
+            <address>
+                9450 Gilman Dr. La Jolla, CA 92092
+            </address>
+            <p>Contact me <a href="Contact.html">here</a></p>
+        </footer>
+        <script src="portfolio.js"></script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+    </body>
+</html>

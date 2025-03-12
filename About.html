@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Henry Tran's personal portfolio. Explore my skills, projects, and resume.">
+        <meta name="keywords" content="Henry Tran, portfolio, software developer, projects, resume, coding">
+        <meta name="author" content="Henry Tran">
+        <title>Personal Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+            secret-do-not-tell {
+                text-align: center;
+                padding: 0px;
+                border: 0px;
+                margin: 0px;
+                font-weight: bold;
+            }
+            secret-do-not-tell[top-secret="silent"] {
+                color: white;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <ul>
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="About.html">About </a></li>
+                    <li><a href="Skills.html">Skills </a></li>
+                    <li><a href="Projects.html">Projects </a></li>
+                    <li><a href="Contact.html">Contact </a></li>
+                    <li><a href="Theme.html">Theme </a></li>
+                    <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
+                </ul>
+                <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
+            </nav>
+        </header>
+        <main class="content">
+            <img src="static/IMG_2285.jpg" alt="A Selfie of Me" width="300" id="selfie"/>
+            <h2>About Me</h2>
+            <section id="basic_info">
+                <p>                        
+                    My name is Henry Tran, and I am currently a third year undergraduate majoring in <b>Computer Engineering </b>
+                    at <strong>UC San Diego</strong>. I am a <dfn>second generation Asian American</dfn>, meaning  first generation in family born and raised in America, and a first generation college student in my family. Being able to pursue my passion is a dream and I wish to continue on this road.
+                </p>
+            </section>
+            <section id="passions">
+                <hr>
+                <p>
+                    I am passionate about being able to make something that can support that masses and 
+                    be something that surpasses me as a creator in notability. Currently, I have interests in <em>web/app development </em>
+                    as well as in the <i>AI</i> as well. In the future would love to combine the products that impactful changes 
+                    the world for the better and enables us humans to thrive.
+                </p>
+            </section>
+            <section id="hobbies">
+                <hr>
+                <p>Whenever I do have some amount of free time, I like to: </p>
+                <ul>
+                    <li>Play Video Games</li>
+                    <li>Playing Sports, like Badminton</li>
+                    <li>Going out with friends</li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Copyright <span id="user">Henry Tran</span> 2025</p>
+            <address>
+                9450 Gilman Dr. La Jolla, CA 92092
+            </address>
+            <p>Contact me <a href="Contact.html">here</a></p>
+        </footer>
+        <script src="portfolio.js"></script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+    </body>
+</html>

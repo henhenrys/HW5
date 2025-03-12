@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Henry Tran's personal portfolio. Explore my skills, projects, and resume.">
+        <meta name="keywords" content="Henry Tran, portfolio, software developer, projects, resume, coding">
+        <meta name="author" content="Henry Tran">
+        <title>Personal Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <ul>
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="About.html">About </a></li>
+                    <li><a href="Skills.html">Skills </a></li>
+                    <li><a href="Projects.html">Projects </a></li>
+                    <li><a href="Contact.html">Contact </a></li>
+                    <li><a href="Theme.html">Theme </a></li>
+                    <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
+                </ul>
+                <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
+            </nav>
+        </header>
+        <main class="content">
+
+            <div id="projects-container">
+                <button onclick="loadLocal()" id="load_local-btn">Load Local</button>
+            </div>
+
+            <!-- <section id="p1">
+                <h2>Project 1: Tiny VLM Project</h2>
+                <aside>
+                    <figure>
+                        <img src="static/VLM.png" alt="Interface of Demo Website" style="width: 45dvw;">
+                        <figcaption>Demo Website using our model</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="static/results.png" alt="Results from providing image" style="width: 45dvw;">
+                        <figcaption>Results obtained from passing in said image</figcaption>
+                    </figure>
+                </aside>
+                <p>
+                    This project, me and a group of 3 worked a Vision-Language Model where given an image, the model 
+                    is able to give information on the image. Alongside that, it is able to answer questions regarding
+                    the image with a good accuracy. In the project I worked primarily on the data exploration phase,
+                    understanding the data our dataset contained, and instruction tuning, fine tunes the responses on 
+                    a labeled dataset and outputs. This project taught a lot of the team work needed in a project and 
+                    the importance of communication.
+                </p>
+            </section>
+            <section id="p2">
+                <h2>Project 2: Simple Portfolio Site</h2>
+                <aside>
+                    <figure>
+                        <img src="static/landing_page.png" alt="Landing Page of portfolio" style="width: 45dvw;">
+                        <figcaption>The Landing page of Portfolio</figcaption>
+                    </figure>
+                </aside>
+                <p>
+                    This was the final project for this course and we were tasked to create a portfolio using HTML, CSS, 
+                    and JavaScript and have it be deployed onto GitHub for eveyone to see. This final project taught me 
+                    a lot about bringing in the important concepts on HTML, CSS and JavaScript and putting it together to 
+                    make something that has a tangible impact outside the scope of the classroom. It taught important skills 
+                    that I can apply to, not only to this class but, my career as well.
+                </p>
+            </section>
+            <section id="p3">
+                <h2>Project 3: Synthesizer Project</h2>
+                <aside>
+                    <figure>
+                        <img src="static/synthesizer.png" alt="App of the synthesizer" style="width: 45dvw;">
+                        <figcaption>App of the synthesizer</figcaption>
+                    </figure>
+                </aside>
+                <p>
+                    This was a final project offered for ECE45. In this project me and my group were tasked in creating a synthesizer 
+                    and using the concepts that we learned in the course. Using core concepts like Fourier Transforms, modulations, 
+                    filters, and etc. My first instance working in a large group project, and learned core group communication. Also 
+                    taught a lot about intricacies of the things I was learning. Furthermore, was my first expereince working with 
+                    development of any sort of software that can be used by everyone.
+                </p>
+            </section>
+            <template>
+                <hgroup>
+                    <h2>New Project</h2>
+                    <p>Description of what is done in this project</p>
+                </hgroup>
+                <picture>
+                    <img src="path_of_image">
+                </picture>
+            </template> -->
+        </main>
+        <footer class="footer">
+            <p>Copyright <span id="user">Henry Tran</span> 2025</p>
+            <address>
+                9450 Gilman Dr. La Jolla, CA 92092
+            </address>
+            <p>Contact me <a href="Contact.html">here</a></p>
+        </footer>
+        <script src="portfolio.js"></script>
+        <script>
+            async function loadLocal() {
+                const url = "projects.json";
+                try {
+                    const responses = await fetch(url);
+                    if (!responses.ok) {
+                        throw new Error(`Response status: ${responses.status}`);
+                    }
+                    const jsonData = await responses.json();
+                    if(!localStorage.getItem("json")) {
+                        localStorage.setItem("json", JSON.stringify(jsonData))
+                    }
+                    const jsons = JSON.parse(localStorage.getItem("json"))
+                    jsons.forEach(project => {
+                        console.log(project.title)
+                        window.galleryItem = document.createElement("project-card");
+                        window.galleryItem.setAttribute("Title", `${project.title}`);
+                        window.galleryItem.setAttribute("Description", `${project.description}`);
+                        window.galleryItem.setAttribute("image-url", `${project.image}`);
+                        window.galleryItem.setAttribute("alt", `${project.alt}`);
+                        document.getElementById("projects-container").appendChild(window.galleryItem);
+                    });
+                    document.getElementById("load_local-btn").hidden = true;
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+        </script>
+        <script type="module" src="card.js"></script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+    </body>
+</html>

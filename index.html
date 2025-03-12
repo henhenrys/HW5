@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Henry Tran's personal portfolio. Explore my skills, projects, and resume.">
+        <meta name="keywords" content="Henry Tran, portfolio, software developer, projects, resume, coding">
+        <meta name="author" content="Henry Tran">
+        <title>Personal Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <style>
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <ul>
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="About.html">About </a></li>
+                    <li><a href="Skills.html">Skills </a></li>
+                    <li><a href="Projects.html">Projects </a></li>
+                    <li><a href="Contact.html">Contact </a></li>
+                    <li><a href="Theme.html">Theme </a></li>
+                    <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
+                </ul>
+                <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
+            </nav>
+        </header>
+        <main class="landing">
+            <br>
+            <section class="aside_image">
+                <img src="static/working-characters-flat-design-web-banner.png" width="300" alt="2d character on computer" style="text-align: center;">
+                <br>
+                <a href="https://www.freepik.com/free-vector/working-characters-flat-design-web-banner_38013749.htm#fromView=search&page=1&position=35&uuid=9713bcbd-a656-44e9-adbf-086035a61d09" style="text-align: center;">
+                    <cite>Image by brgfx on Freepik</cite>
+                </a>
+            </section>
+            <section class="intro">
+                <h1>Henry Tran</h1>
+                <dl>
+                    <dt><del>Developer</del><ins>Software Developer</ins></dt>
+                    <dd><blockquote>Where there's a will there's a way</blockquote></dd>
+                </dl>
+            </section>
+        </main>
+        <footer class="footer">
+            <hr>
+            <p>Copyright <span id="user">Henry Tran</span> 2025</p>
+            <address>
+                9450 Gilman Dr. La Jolla, CA 92092
+            </address>
+            <p>Contact me <a href="Contact.html">here</a></p>
+        </footer>
+        <script src="portfolio.js">
+            class HelloWorldElement extends HTMLElement {
+                constructor() {
+                super();
+                console.log("Hello world!");
+                }
+            }
+            customElements.define("hello-world", HelloWorldElement);
+        </script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+    </body>
+</html>

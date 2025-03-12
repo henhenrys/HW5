@@ -1,0 +1,199 @@
+:root {
+    --nav-text: #000000;
+    --nav-text-alt: #fff;
+    --hover-text: rgb(170, 228, 253);
+  }
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1:has(+ dl) {
+    font-weight: bold;
+    color: rgb(140, 121, 47);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@scope (.footer) {
+    background-color: rgb(39, 149, 251);
+}
+
+.footer {
+  text-align: center;
+}
+
+figure {
+    transform: rotate(10deg);
+    img {
+        text-align: center;
+    }
+}
+
+#cols {
+    background-color: color-mix(in oklab, #c3b770 100%, white);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    justify-content: center;
+}
+
+.landing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+table {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border: 10rem;
+}
+
+form {
+    margin: 10dvw;
+}
+
+#comments {
+    height:200px;
+}
+
+del {
+    animation-name: highlight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    background-size: 200%;
+    background-image: linear-gradient(to right, var(--hover-text) 50%, transparent 50%), 
+                      linear-gradient(transparent 50%, black 50%);
+}
+/* Inspiration drawn by Tom on Stack Overflow: 
+https://stackoverflow.com/questions/70364899/how-can-i-animate-my-text-to-highlight-from-left-to-right */
+
+.landing .intro {
+    justify-content: center;
+    border: 10dvw;
+    padding: 10dvw;
+    height: max-content;
+}
+
+.landing img {
+    width: 30dvw;
+}
+
+main #selfie {
+    border-radius: 10%;
+    size: 15%;
+    align-self: center;
+}
+
+aside {
+    float: right;
+    text-align: center;
+}
+
+main #programming {
+    flex-direction: column;
+}
+
+.header {
+    font-size: 1.2rem;
+    height: 70px;
+  }
+  
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+  
+.navbar ul {
+    display: flex;
+}
+  
+.header .navbar {
+    justify-content: space-between;
+}
+  
+.navbar ul li {
+    list-style-type: none;
+}
+  
+.header .navbar ul li {
+    padding: 10px;
+}
+  
+.navbar a {
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+    color: rgb(251, 191, 94);
+}
+  
+.navbar a:hover {
+    color: var(--hover-text, rgb(122, 206, 255));
+    background-color: color(display-p3 0.6 0.6 0 / .3);
+}
+
+@media screen and (max-width: 850px) {
+    .header {
+      height: 100%;
+    }
+  
+    .header .navbar {
+      flex-direction: column;
+    }
+    .header .navbar ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .landing {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@keyframes highlight {
+    from {
+      background-position: 0;
+    }
+
+    to {
+      background-position: -100%;
+    }
+}
+
+input[id="fname"],
+input[id="email"],
+textarea[id=comments]{
+    width: 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+input:invalid, textarea:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:valid, textarea:valid {
+    box-shadow: 0 0 5px 1px green;
+}
+
+#projects-container {
+    display: flex;
+    justify-content: center;
+}
