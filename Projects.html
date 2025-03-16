@@ -16,14 +16,15 @@
     <body>
         <header class="header">
             <nav class="navbar">
-                <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                <a href="index.html">
+                    <img src="static/favicon-32x32.png" alt="Logo with Letters HT" style="align-items: center;">
+                </a>
                 <ul>
                     <li><a href="index.html">Home </a></li>
                     <li><a href="About.html">About </a></li>
                     <li><a href="Skills.html">Skills </a></li>
                     <li><a href="Projects.html">Projects </a></li>
                     <li><a href="Contact.html">Contact </a></li>
-                    <li><a href="Theme.html">Theme </a></li>
                     <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
                 </ul>
                 <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
@@ -34,6 +35,7 @@
 
             <div id="projects-container">
                 <button onclick="loadLocal()" id="load_local-btn">Load Local</button>
+                <button onclick="loadRemote()" id="load_remote-btn">Load Remote</button>
             </div>
 
             <!-- <section id="p1">
@@ -108,10 +110,11 @@
         </footer>
         <script src="portfolio.js"></script>
         <script>
-            async function loadLocal() {
-                const url = "projects.json";
+            async function loadRemote() {
+                const url = "https://api.jsonbin.io/v3/b/67d652968960c979a5727475";
                 try {
                     const responses = await fetch(url);
+                    console.log(responses)
                     if (!responses.ok) {
                         throw new Error(`Response status: ${responses.status}`);
                     }
@@ -119,8 +122,10 @@
                     if(!localStorage.getItem("json")) {
                         localStorage.setItem("json", JSON.stringify(jsonData))
                     }
-                    const jsons = JSON.parse(localStorage.getItem("json"))
-                    jsons.forEach(project => {
+                    else {
+                        localStorage.setItem("json", JSON.stringify(jsonData))
+                    }
+                    jsonData.record.forEach(project => {
                         console.log(project.title)
                         window.galleryItem = document.createElement("project-card");
                         window.galleryItem.setAttribute("Title", `${project.title}`);
@@ -130,6 +135,28 @@
                         document.getElementById("projects-container").appendChild(window.galleryItem);
                     });
                     document.getElementById("load_local-btn").hidden = true;
+                    document.getElementById("load_remote-btn").hidden = true;
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+            async function loadLocal() {
+                try {
+                    if(!localStorage.getItem("json")) {
+                        localStorage.setItem("json", JSON.stringify({}))
+                    }
+                    const jsons = JSON.parse(localStorage.getItem("json"))
+                    jsons.record.forEach(project => {
+                        console.log(project.title)
+                        window.galleryItem = document.createElement("project-card");
+                        window.galleryItem.setAttribute("Title", `${project.title}`);
+                        window.galleryItem.setAttribute("Description", `${project.description}`);
+                        window.galleryItem.setAttribute("image-url", `${project.image}`);
+                        window.galleryItem.setAttribute("alt", `${project.alt}`);
+                        document.getElementById("projects-container").appendChild(window.galleryItem);
+                    });
+                    document.getElementById("load_local-btn").hidden = true;
+                    document.getElementById("load_remote-btn").hidden = true;
                 } catch (error) {
                     console.error(error.message);
                 }

@@ -195,5 +195,5 @@ input:valid, textarea:valid {
 
 #projects-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around
 }

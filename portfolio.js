@@ -121,11 +121,15 @@ function setTheme(theme) {
         root.style.setProperty('background', 'rgb(46, 43, 43)');
         root.style.setProperty('color', 'white');
         toggle.innerText = "Light Mode";
+        toggle.style.setProperty('background', 'rgb(46, 43, 43)')
+        toggle.style.setProperty('color', 'white')
     }
     else if (theme === 'good'){
         root.style.setProperty('background', 'white');
         root.style.setProperty('color', 'black');
         toggle.innerText = "Night Mode";
+        toggle.style.setProperty('background', 'white')
+        toggle.style.setProperty('color', 'black')
     }
     else {
         if(localStorage.getItem('bgtheme')) {
@@ -137,12 +141,16 @@ function setTheme(theme) {
             root.style.setProperty('color', localStorage.getItem('theme'));
             root.style.setProperty('font-family', localStorage.getItem('fonttheme'));
             toggle.innerText = "Light Mode";
+            toggle.style.setProperty('background', 'rgb(46, 43, 43)')
+            toggle.style.setProperty('color', 'white')
         }
         else {
             root.style.setProperty('background', bg_colo.value);
             root.style.setProperty('color', colo.value);
             root.style.setProperty('font-family', fon.value);
             toggle.innerText = "Light Mode";
+            toggle.style.setProperty('background', 'white')
+            toggle.style.setProperty('color', 'black')
         }
     }
 }
