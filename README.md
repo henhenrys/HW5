@@ -1,1 +1,3 @@
 # HW5
+
+Some of the changes that I have implemented was removing the themes page that was present in a previous version of this site. Mainly due to it being unnecessary, in the context of a portfolio site. Another thing that was changed was making the logo that is present on all the pages linkable and how all leads to the home page. Another thing that was changed was with the form where now instead of providing a POST request to httpbin, it now will foward to an external API in which will allow the form to be able to send data and information directly to my UCSD email.
