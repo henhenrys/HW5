@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; margin: 20px; 
+        }
+        input, button { 
+            margin: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD Operations</h1>
+
+    <h2>Add / Update Item</h2>
+    <input type="text" id="itemKey" placeholder="Enter Key">
+    <input type="text" id="itemValue" placeholder="Enter Value">
+    <button onclick="createOrUpdateItem()">Save</button>
+    
+    <h2>Retrieve Item</h2>
+    <input type="text" id="retrieveKey" placeholder="Enter Key">
+    <button onclick="readItem()">Retrieve</button>
+    <p id="retrievedValue"></p>
+    
+    <h2>Delete Item</h2>
+    <input type="text" id="deleteKey" placeholder="Enter Key">
+    <button onclick="deleteItem()">Delete</button>
+    
+    <h2>All Items</h2>
+    <button onclick="listAllItems()">Show All</button>
+    <ul id="itemsList"></ul>
+    
+    <script>
+        function createOrUpdateItem() {
+            const key = document.getElementById('itemKey').value;
+            const value = document.getElementById('itemValue').value;
+            if (key && value) {
+                localStorage.setItem(key, value);
+                alert('Item saved!');
+            } else {
+                alert('Please enter both key and value.');
+            }
+        }
+
+        function readItem() {
+            const key = document.getElementById('retrieveKey').value;
+            const value = localStorage.getItem(key);
+            document.getElementById('retrievedValue').innerText = value ? `Value: ${value}` : 'Item not found';
+        }
+
+        function deleteItem() {
+            const key = document.getElementById('deleteKey').value;
+            if (localStorage.getItem(key)) {
+                localStorage.removeItem(key);
+                alert('Item deleted!');
+            } else {
+                alert('Item not found.');
+            }
+        }
+
+        function listAllItems() {
+            const list = document.getElementById('itemsList');
+            list.innerHTML = '';
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                const li = document.createElement('li');
+                li.textContent = `${key}: ${value}`;
+                list.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
